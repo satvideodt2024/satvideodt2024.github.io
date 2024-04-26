@@ -1,1 +1,729 @@
-<p>Hello 大家好</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta
+      name="keywords"
+      content="icpr, workshop, computer vision, computer graphics, visual learning, simulation environments, robotics, machine learning, object detection, single object tracking, Multiple-object tracking"
+    />
+
+    <link rel="shortcut icon" href="2024/img/website_logo.png" />
+
+    <title>
+      SatVideoDT: The 2st Challenge on Moving Object Detection and Tracking in
+      Satellite Videos
+    </title>
+    <meta
+      name="description"
+      content="SatVideoDT: The 2st Challenge on Moving Object Detection and Tracking in Satellite Videos ---"
+    />
+
+    <!--Open Graph Related Stuff-->
+    <meta
+      property="og:title"
+      content="Challenge on Moving Object Detection and Tracking in Satellite Videos"
+    />
+    <meta property="og:url" content="https://SatVideoDTchallenge.github.io/" />
+    <meta
+      property="og:description"
+      content="SatVideoDT: The 2st Challenge on Moving Object Detection and Tracking in Satellite Videos ---"
+    />
+    <meta
+      property="og:site_name"
+      content="SatVideoDT: The 2st Challenge on Moving Object Detection and Tracking in Satellite Videos"
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:image:url" content="" />
+
+    <!--Twitter Card Stuff-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="SatVideoDT: The 2st Challenge on Moving Object Detection and Tracking in Satellite Videos"
+    />
+    <meta
+      name="twitter:image"
+      content="https://github.com/SatVideoDTChallenge/2024/img/website_logo.png"
+    />
+    <meta name="twitter:url" content="satvideodtchallenge.github.io" />
+    <meta
+      name="twitter:description"
+      content="SatVideoDT: The 2st Challenge on Moving Object Detection and Tracking in Satellite Videos ---"
+    />
+
+    <!-- CSS  -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./2024/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./2024/css/main.css?2"
+      media="screen,projection"
+    />
+
+    <!-- Font Awesome -->
+    <script src="/static/js/jquery.min.js?1"></script>
+    <script
+      src="https://kit.fontawesome.com/ff6e9b10da.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/js/moment.min.js?1"></script>
+    <script src="/static/js/main.js?2"></script>
+    <style> 
+      .divcss5{text-align:center} 
+      </style> 
+
+    <style type="text/css">
+        #table1{
+            font: bold 16px/1.4em "Trebuchet MS", sans-serif;
+        }
+        #table1 thead th{
+            padding: 15px;
+            border: 1px solid #d8e9b7;
+            border-bottom: 3px solid #d8e9b7;
+            text-shadow: 1px 1px 1px #d8e9b7;
+            color: #fff;
+            background-color: #d8e9b7;
+            border-radius: 5px 5px 0px 0px;
+        }
+        #table1 thead th:empty{
+            background-color: transparent;
+            border: none;
+        }
+        #table1 tbody th{
+            padding: 0px 10px;
+            border: 1px solid #d8e9b7;
+            border-right: 3px solid #d8e9b7;
+            text-shadow: 1px 1px 1px #d8e9b7;
+            color: #666;
+            background-color: #d8e9b7;
+            border-radius: 5px 0px 0px 5px;
+        }
+        #table1 tbody td{
+            padding: 10px;
+            border: 2px solid #E7EFE0;
+            text-align: center;
+            text-shadow: 1px 1px 1px #fff;
+            color: #666;
+            background-color: #DEF3CA;
+            border-radius: 2px;
+        }
+        #table1 tbody span.check::before{
+            content: url(images/check0.png);
+        }
+        #table1 tfoot td{
+            padding: 10px 0px;
+            font-size: 32px;
+            color: #d6e2b5;
+            text-align: center;
+            text-shadow: 1px 1px 1px #444;
+        }
+    </style>
+     
+  </head>
+
+  <body>
+    <style>
+      #year-header {
+        border: none;
+        display: block;
+        width: 100%;
+        background: #eaebea;
+      }
+
+      #year-header ul {
+        display: block;
+        margin: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        text-align: center;
+      }
+
+      #year-header ul li {
+        display: inline-block;
+        list-style: none;
+      }
+
+      #year-header ul li a {
+        display: block;
+        text-decoration: none;
+        border: none;
+
+        padding: 0 1.7em;
+        height: 3.2em;
+        line-height: 3.2em;
+        vertical-align: middle;
+
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 1em;
+        font-weight: 400;
+        color: #444;
+      }
+
+      @media (max-width: 1000px) {
+        #year-header ul li a {
+          font-size: 0.8em;
+        }
+      }
+
+      #year-header ul li a:hover {
+        background: #dddedd;
+        color: #000;
+        transition: 0.5s;
+      }
+    </style>
+
+    <div class="navbar navbar-default sticky-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"></a>
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbar-main"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li><a href="#Description">Description</a></li>
+            <li><a href="#Datasets">Datasets</a></li>
+            <li><a href="#Evaluation">Evaluation</a></li>
+            <li><a href="#Baseline">Baseline</a></li>
+            <li><a href="#Submission">Submission</a></li>
+            <li><a href="#dates">Important Dates</a></li>
+            <li><a href="#Awards">Awards</a></li>
+            <li><a href="#Conditions">Conditions</a></li>
+            <li><a href="#Issues">Issues</a></li>
+            <!-- <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#speakers">Invited Speakers</a></li>
+  -->
+            <!-- <li><a href="#awards">Panel</a></li> -->
+            <!--                <li><a href="#accepted">Accepted Papers</a></li>-->
+            <li><a href="#organizers">Organizers</a></li>
+            <!--<li><a href="#programcommittee">Program Committee</a></li>-->
+            <!-- <li><a href="#sponsors">Sponsors</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="page-content">
+        <p><br /></p>
+        <div class="row">
+          <div class="col-xs-12">
+            <img class="img-fluid" src="2024/img/website_logo.png" />
+            <!--                <small style="float:right;margin-top:1mm;margin-right:5mm;">Image credit to <a-->
+            <!--                        href="https://pixabay.com/users/danielhannah-8058574" target="_blank">Daniel Hannah</a></small>-->
+            <!--<center>Date TBD, half-day</center>-->
+          </div>
+        </div>
+        <p><br /></p>
+
+       
+        
+        <div class="row">
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="intro"></a>
+            <h2>Introduction</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+              Satellite video cameras can provide continuous observation for a
+              large-scale area, which is suitable for several downstream remote
+              sensing applications including
+              <i>traffic management, ocean monitoring, and smart city</i>.
+              Recently, small moving objects detection and tracking in satellite
+              videos have attracted increasing attention in both academia and
+              industry. However, it remains challenging to achieve accurate and
+              robust moving object detection and tracking in satellite videos,
+              due to the lack of high-quality and well-annotated public datasets
+              and comprehensive benchmarks for performance evaluation. To this
+              end, we plan to organize a challenge based on the recent  <a href="https://github.com/The-Learning-And-Vision-Atelier-LAVA/VISO" target="_blank"
+              >VISO</a
+            >
+              dataset, and focus on the specific challenges and research
+              problems in moving object detection and tracking in satellite
+              videos. We hope this challenge could inspire the community to
+              explore the tough problems in satellite video analysis, and
+              ultimately drive technological advancement in emerging
+              applications.
+            </p>
+       
+          </div>
+        </div>
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="Description"></a>
+            <h2>Description of the Challenge</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+              <b
+                >The 2st Challenge on Moving Object Detection and Tracking in
+                Satellite Videos (SatVideoDT)
+              </b>
+              at
+              <a href="https://www.icpr2024.org/" target="_blank">ICPR 2024</a>
+              aims to facilitate the development of video object detection and tracking
+              algorithms, and push forward research in the field of moving
+              object detection and tracking from satellite videos. This
+              challenge is expected to include the following three competition
+              tracks.
+              
+              <div class="row">
+                <div class="col-xs-12">
+                  <a class="anchor" id="Track1"></a>
+                  <h3>Track 1: Tiny moving object detection in satellite videos.</h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <p>
+                    Given the  <a href="https://github.com/The-Learning-And-Vision-Atelier-LAVA/VISO" target="_blank"
+                    >VISO</a
+                  >
+                    dataset with 95 satellite videos (with
+                    28,500 frames) captured by Jilin-1 satellite platforms, the goal
+                    of this task is to achieve moving object detection across the
+                    whole video. The organizers will provide the training set (with 21,000 frames) and the validation set (with 3000 frames) with full bounding boxes annotations. The test set (with 4500 frames)
+                    will be also provided, but with satellite images only. The
+                    participants are expected to train their models on the training
+                    set and validate the performance on the validation set. Then,
+                    the finalized model is used to generate detection results on the
+                    test set. The final performance will be automatically evaluated
+                    by the organizers with a set of objective quantitative metrics.
+                    (see Evaluation Metrics, Track 1).
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <a class="anchor" id="Track2"></a>
+                  <h3>Track 2: Multiple-object tracking in satellite videos.</h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <p>
+                    This task aims at locating multiple objects of interest, maintaining their identities, 
+                    and yielding their individual trajectories across the whole video. 
+                    For this task, 95 sequences (videos 1 to 95) with a total of 28,500 frames from the VISO dataset will be provided. Specifically, videos 1 to 65
+                    will be used as the training set and videos 66 to 75 will be used as the validation set. 
+                    The bounding box annotations and the instance id of each object in each frame will be provided. The test set is composed of videos 76 to 95, 
+                    and only the annotation of the first frame will be provided for initialization. The participants are expected to train 
+                    their models on the training set and validate the performance on the validation set. Then, the finalized model
+                    is used to generate tracking results on the test set.
+                  </p>
+                </div>
+              </div>
+
+            </p>
+          </div>
+        </div>
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="Datasets"></a>
+            <h2>Datasets</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+            This challenge is built upon our recently released             
+            <a href="https://github.com/The-Learning-And-Vision-Atelier-LAVA/VISO target="_blank"
+              >VISO</a
+            >
+            dataset, the first well-annotated large-scale satellite videos
+            dataset for the task of moving object detection and tracking.
+            The dataset is captured by the Jilin-1 satellite constellation at
+            different positions of the satellite orbit. The recorded videos
+            cover several square kilometers of areas in real scenes. Each
+            image in the videos has a resolution of 12,000 &times 5,000 and
+            contains a great number of objects with different scales.
+            Moreover, four common types of moving objects, including
+            plane, car, ship and train, are manually labeled. An example of a labeled video is shown below:
+            </p>
+            <div class="divcss5">
+              <video class="vimeo-embed" id="video" width=60% src="https://satvideodt.github.io/2024/img/demo.mp4" controls autoplay> 
+              </video>
+              </div> 
+
+          </div>
+        </div>
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="Evaluation"></a>
+            <h2>Evaluation Metrics</h2>
+          </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12">
+              <a class="anchor" id="Track1"></a>
+              <h3>Track 1: Moving object detection in satellite videos.</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <p>
+                To evaluate the detection performance of the methods submitted to the challenge, the commonly-used evaluation metrics (i.e., mAP) for object detection will be used. We report the average results over all the satellite videos in the evaluation dataset. Note that, the final results are ranked by mAP (IOU = 0.5) calculated in the test dataset.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-xs-12">
+              <a class="anchor" id="Track2"></a>
+              <h3>Track 2: Multiple-object tracking in satellite videos.</h3>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-xs-12">
+              <p>
+                The metrics in generic Multiple-Object Tracking Challenge Benchmark will be used for quantitative evaluation. The final results of multi-objective tracking will be ranked according to the Multiple Object Tracking Accuracy (MOTA) and IDF1 values calculated by participants in the test data set with a comprehensive weighting of 50% and 50% respectively.
+              </p>
+            </div>
+          </div>
+          
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="Baseline"></a>
+            <h2>Baseline Model</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+            Over the last few years, several milestone methods have been developed for satellite videos, including <a href="https://github.com/ChaoXiao12/Moving-object-detection-DSFNet"_blank"
+            >DSFNet</a> and <a href="https://github.com/BossBobxuan/CFME"_blank"
+            >CFME</a
+          >. In this challenge, DSFNet is used as a detection baseline model and the submitted results should be at least on par with DSFNet. 
+            In particular, we selected SORT as a multi object tracking baseline model. Note that, the inputs (i.e., detection results at each frame) to the baselines is used the detection results achieved by DSFNet method. 
+            The solutions with evaluation metrics values lower than these baselines will not be ranked in the leaderboard.
+            </p>
+            <div class="divcss5">
+            <table id="recruit">
+              <caption id="caption2"> Moving object detection </caption>
+              <tr><th>Method</th><th>mAP(IOU=0.5)</th><th>Score</th></tr>
+              <tr><td>DSFNet</td><td>0.705</td><td>70.5</td></tr>
+          </table>
+
+        <table id="recruit" >
+          <caption id="caption2">Multiple-object tracking </caption>
+          <tr><th>Method</th><th>MOTA</th><th>IDF1</th><th>Score</th></tr>
+          <tr><td>SORT</td><td>0.504</td><td>0.696</td><td>60.0</td></tr>
+      </table>
+    </div>
+          </div>
+        </div>
+        <p><br /></p>
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="Submission"></a>
+            <h2>Submission</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+                We use <a
+                href="https://codalab.lisn.upsaclay.fr/competitions/1598/"
+                target="_blank"
+                >CodaLab</a
+              >
+                for online submission in the development phase. Here, we provide an  <a
+                href="https://codalab.lisn.upsaclay.fr/competitions/1598/"
+                target="_blank"
+                >example</a
+              > to help participants to format their submissions. In the test phase, the final results and the source codes (both training and test) need to be submitted to email <a href="satvideodt@outlook.com" target="_blank"
+              > satvideodt@outlook.com</a
+            >. Please refer to our online <a
+              href="https://codalab.lisn.upsaclay.fr/competitions/1598/"
+              target="_blank"
+              >website</a
+            > for details of the submission rules.
+            </p>
+          </div>
+        </div>
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="dates"></a>
+            <h2>Important Dates</h2>
+            <br />
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                    <td>Release of part of training data;</td>
+                    <td>Apr 30, 2024</td>
+                  </tr>
+                <tr>
+                  <td>Registration deadline;</td>
+                  <td>Jun 15, 2024</td>
+                </tr>
+                <tr>
+                  <td>Final test data release, testing server online;</td>
+                  <td>Jun 20, 2024</td>
+                </tr>
+                <tr>
+                    <td>Test result submission deadline;</td>
+                    <td>Jul 10, 2024 (23:59 Pacific time)</td>
+                </tr>
+                <tr>
+                  <td>Fact sheet / code / model submission deadline;</td>
+                  <td>Jul 10, 2024 (23:59 Pacific time)</td>
+                </tr>
+                <tr>
+                  <td>Test preliminary score release to the participants;</td>
+                  <td>Jul 30, 2024 </td>
+                </tr>
+                <tr>
+                    <td>Report submission deadline (optional);</td>
+                    <td>Aug 10, 2024 </td>
+                  </tr>
+      
+                <tr id="schedule">
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="Awards"></a>
+            <h2>Awards:</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+              The organization committee of the ICPR2024 Conference will issue award certificates to the top three participant teams of each track. 
+              Teams with better grades will be invited to submit their co-written papers to the ICPR2024 Challenge for peer review. If the paper is 
+              to be accepted and published, the participating team must specify the solution and ensure the repeatability 
+              of the competition results. Co-written paper is optional and does not affect the competitor's participation in the challenge or award.
+            </p>
+           
+          </div>
+        </div>
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="Conditions"></a>
+            <h2>SatVideoDT 2024 Terms and Conditions:</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+                Each group cannot have more than six group members (i.e., 1 to 5 group members is OK), and each paricipant can only join one group. Each group can only submit one algorithm for final ranking.
+            </p>
+           
+          </div>
+        </div>
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="Issues"></a>
+            <h2>Issues and Questions:</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+            For any question regarding this challenge, please send an email to <a href="satvideodt@outlook.com" target="_blank"
+            > satvideodt@outlook.com</a
+          >. You can also join our WeChat group by scanning the code below:
+          <div class="divcss5"><img src="2024/img/code.jpg" width="200"/></div> 
+
+            </p>
+          </div>
+        </div>
+        <p><br /></p>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="organizers"></a>
+            <h2>Organizers</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-2">
+            <a href="http://yulanguo.me/">
+              <img class="people-pic" src="2024/img/people/yulan.jpg" />
+            </a>
+            <div class="people-name">
+              <a href="http://yulanguo.me/">Yulan Guo</a>
+              <h6>National University of Defense Technology</h6>
+            </div>
+          </div>
+          
+          <div class="col-xs-2">
+            <a href="https://uk.linkedin.com/in/fakharkhalid">
+              <img class="people-pic" src="2024/img/people/qianyin.jpg" />
+            </a>
+            <div class="people-name">
+              <a href="https://uk.linkedin.com/in/fakharkhalid"
+                >Qian Yin</a
+              >
+              <h6>National University of Defense Technology</h6>
+            </div>
+          </div>
+
+          <div class="col-xs-2">
+            <a href="https://qingyonghu.github.io/">
+              <img class="people-pic" src="2024/img/people/qingyong.jpg" />
+            </a>
+            <div class="people-name">
+              <a href="https://qingyonghu.github.io/">Qingyong Hu</a>
+              <h6>University of Oxford</h6>
+            </div>
+          </div>
+         
+          <div class="col-xs-2">
+            <a
+              href="https://zf020114.github.io/"
+            >
+              <img class="people-pic" src="2024/img/people/fengzhang.jpg" />
+            </a>
+            <div class="people-name">
+              <a
+                href="https://zf020114.github.io/"
+                >Feng Zhang</a
+              >
+              <h6>National University of Defense Technology</h6>
+            </div></h6>
+            </div>
+
+          </div>
+          <div class="col-xs-1"></div>
+        </div>
+        <p><br /></p>
+        <div class="row">
+          <div class="col-xs-1"></div>
+
+          <div class="col-xs-2">
+            <a
+              href="https://zf020114.github.io/"
+            >
+              <img class="people-pic" src="2024/img/people/yezhang.jpg" />
+            </a>
+            <div class="people-name">
+              <a
+                href="https://zf020114.github.io/"
+                >Ye Zhang</a
+              >
+              <h6>National University of Defense Technology</h6>
+            </div></h6>
+            </div>
+
+          <div class="col-xs-2">
+              <img class="people-pic" src="2024/img/people/haiyuchen.jpg" />
+            <div class="people-name">
+              <a>haiyuchen</a>
+              <h6>National University of Defense Technology</h6>
+            </div>
+          </div>
+          <div class="col-xs-2">
+              <img class="people-pic" src="2024/img/people/yutingxie.jpg" />
+            <div class="people-name">
+              <a>Yuting Xie</a>
+              <h6>National University of Defense Technology</h6>
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <a href="https://why-scholar.github.io/">
+              <img class="people-pic" src="2024/img/people/hanyunwang.jpg" />
+            </a>
+            <div class="people-name">
+              <a href="https://why-scholar.github.io/"
+                >Hanyun Wang</a
+              >
+              <h6>Information Engineering University</h6>
+            </div>
+          </div>
+
+        </div>
+        <p><br /></p>
+
+        <!-- <div class="row">
+          <div class="col-xs-12">
+            <a class="anchor" id="sponsors"></a>
+            <h2>Challenge sponsored by:</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4 sponsor">
+            <a href="https://www.sensat.co.uk/"
+              ><img src="2024/img/changguang.png"
+            /></a>
+          </div> -->
+          <!--                    <div class="col-xs-4 sponsor">-->
+          <!--                        <a href="https://www.tobii.com/"><img src="2024/img/tobii.jpg"/></a>-->
+          <!--                    </div>-->
+          <!--                    <div class="col-xs-4 sponsor">-->
+          <!--                        <a href="https://www.google.com/"><img src="2024/img/google.png"/></a>-->
+          <!--                    </div>-->
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class="section text-gray" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12" style="text-align: right">
+            <small
+              >&copy; 2024 Seonwook Park. Template by
+              <a href=" visualdialog.org" class="external"> visualdialog.org</a
+              >.</small
+            >
+          </div>
+          <br /><br />
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>
